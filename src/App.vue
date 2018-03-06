@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+
     <img src="/src/assets/logo.png">
+
     <invitation message='Que voulez-vous faire ?'></invitation>
 
     <button class="btn btn-success" v-on:click="onMachinesListClick">Consulter la liste des machines</button>
     <button class="btn btn-success" v-on:click="onMapClick">Voir la carte</button>
-    <div v-for="machine in machines" v-bind:key="machine.id">{{machine.name}}</div>
+    
     <liste></liste>
     <carte></carte>
+
   </div>
 </template>
 
@@ -32,6 +35,7 @@ export default {
 }
 </script>
 
+// style css propre au component
 <style scoped>
 
 #app {

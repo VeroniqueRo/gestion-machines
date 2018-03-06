@@ -2,7 +2,8 @@
 
     <h1>{{ message }}</h1>
 
-</template>  
+</template>
+ 
 <script>
 
 export default {
@@ -18,12 +19,14 @@ export default {
 }
 </script>
 
-// css de la page
-
+// style css propre au component
 <style scoped>
+
 #affichage {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
 }
