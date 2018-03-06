@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "vue": "^2.5.11",
-    "vue-js-toggle-button": "^1.2.2"
+    "vue-js-toggle-button": "^1.2.2",
+    "vue-router": "^3.0.1"
   },
   "browserslist": [
     "> 1%",

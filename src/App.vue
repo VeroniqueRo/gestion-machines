@@ -5,12 +5,21 @@
 
     <invitation message='Que voulez-vous faire ?'></invitation>
 
+    <!--  Première utilisation
     <button class="btn btn-success" v-on:click="onMachinesListClick">Consulter la liste des machines</button>
     <button class="btn btn-success" v-on:click="onMapClick">Voir la carte</button>
-    
     <liste></liste>
-    <carte></carte>
+    <carte></carte> -->
 
+    <!-- utilise le composant router-link pour la navigation. -->
+    <!-- spécifie le lien en le passant à la prop `to` -->
+    <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
+    <router-link to="/machines"><button class="btn btn-success" v-on:click="onMachinesListClick">Consulter la liste des machines</button></router-link>
+    <router-link to="/map"><button class="btn btn-success" v-on:click="onMapClick">Voir la carte</button></router-link>
+    <router-link to="/machine"><button class="btn btn-success" v-on:click="onMachinesListClick">Voir la machine</button></router-link>
+    <router-view></router-view>
+    
+    
   </div>
 </template>
 
@@ -33,9 +42,12 @@ export default {
     }
   }
 }
+
+
+
 </script>
 
-// style css propre au component
+<!-- style css propre au component-->
 <style scoped>
 
 #app {
@@ -64,7 +76,8 @@ li {
   margin: 0 10px;
 }
 
-a {
+.router-link-active {
   color: #42b983;
 }
+
 </style>

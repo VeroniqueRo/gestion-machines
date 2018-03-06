@@ -1,9 +1,11 @@
 <template>  
 
-    <h1>{{ message }}</h1>
+    <div>
+        <h1>{{ message }}</h1>
+    </div>
 
 </template>
- 
+
 <script>
 
 export default {
@@ -19,22 +21,8 @@ export default {
 }
 </script>
 
-// style css propre au component
+<!-- style css propre au component-->
 <style scoped>
-
-#affichage {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-img {
-  width: 50%;
-}
-
 
 h1, h2 {
   font-weight: bold;
