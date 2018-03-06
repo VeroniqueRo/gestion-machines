@@ -5,6 +5,8 @@
 
     <invitation message='Que voulez-vous faire ?'></invitation>
 
+
+
     <!--  Première utilisation
     <button class="btn btn-success" v-on:click="onMachinesListClick">Consulter la liste des machines</button>
     <button class="btn btn-success" v-on:click="onMapClick">Voir la carte</button>
