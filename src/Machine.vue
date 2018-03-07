@@ -1,7 +1,11 @@
 <template>
   
   <div>
-    <h1>{{ name }}</h1>
+    
+    <h1>Machine {{ name }}</h1>
+    <h2 v-if="status">Status OK</h2>
+    <h2 v-else>Maintenance à faire</h2>
+    <h4>Dernière mise à jour : le {{ checkedAt }}</h4>
   </div>
 
 </template>
@@ -11,9 +15,10 @@ export default {
   name: 'machine',
   data : function () {
     return {
-      name: 'Machine what else ?',
+      id: 1,
+      name: 'What else ?',
       status: false,
-      checkedAt: new Date(),
+      checkedAt: new Date().toLocaleString(),
       }
   }
     

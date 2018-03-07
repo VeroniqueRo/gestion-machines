@@ -10,11 +10,14 @@
 
 export default {
     name: 'liste',
+    props:['nom'],
+
     data(){
         return {
             message : 'Liste des machines'
         };        
     },
+    
     methods:{
 
     }

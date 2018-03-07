@@ -27,14 +27,14 @@ const routes = [
 // Création de l'instance du routeur et passez l'option `routes`.
 const router = new VueRouter ({
   routes
-})
+});
 
 
 // Exemple de component avec props
 Vue.component('invitation', {
   props: ['message'],
   template:"<h1>{{message}}</h1>"
-})
+});
 
 // Components utilisés de manière globale
 Vue.component('liste', MachinesList);
@@ -47,5 +47,5 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
-})
+});
 
