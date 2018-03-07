@@ -18,7 +18,7 @@
     <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
     <router-link to="/machines"><button class="btn btn-info" v-on:click="onMachinesListClick">Consulter la liste des machines</button></router-link>
     <router-link to="/map"><button class="btn btn-info" v-on:click="onMapClick">Voir la carte</button></router-link>
-    <router-link to="/machine"><button class="btn btn-info" v-on:click="onMachinesListClick">Voir la machine</button></router-link>
+    <router-link to="/machine"><button class="btn btn-info" v-on:click="onMachineClick">Voir la machine</button></router-link>
     <router-view></router-view>
     
     
@@ -41,6 +41,9 @@ export default {
     },
     onMapClick : function () {
       window.alert("Vous avez appuyé sur la carte")
+    },
+    onMachineClick : function () {
+      window.alert("Vous avez appuyé sur une machine précise")
     }
   }
 }
