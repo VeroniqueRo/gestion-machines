@@ -2,7 +2,12 @@
 
     <div>
         <h1>{{ message }}</h1>
-        <machine></machine>
+        <machine v-for="machine in machines"
+            v-bind:key="machine.id"
+            v-bind:name="machine.name"
+            v-bind:status="machine.status"
+            v-bind:checkedAt="machine.checkedAt">
+        </machine>
     </div>
     
 </template>
@@ -11,16 +16,28 @@
 
 export default {
     name: 'liste',
-    props:['name','status','checkedAt'],
 
     data () {
         return {
             message : 'Liste des machines',
-            id: 1,
-            name: 'What else ?',
-            status: false,
-            checkedAt: new Date().toLocaleString(),
-        };        
+        
+            machines: [{
+                id: 1,
+                name: 'What else ?',
+                status: true,
+                checkedAt: new Date().toLocaleString(),
+            },{
+                id: 2,
+                name: 'Broken',
+                status: false,
+                checkedAt: new Date().toLocaleString(),
+            },{
+                id: 3,
+                name: 'Coffee Machine',
+                status: true,
+                checkedAt: new Date().toLocaleString(),
+            }]
+         }  
     },
     
     methods:{

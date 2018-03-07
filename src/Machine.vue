@@ -15,11 +15,11 @@
 export default {
   name: 'machine',
   props:['name','status','checkedAt'],
-    
+      
 }    
 </script>
 
-<style>
+<style scoped>
 
 h1, h2 {
   font-weight: bold;
@@ -32,6 +32,13 @@ h1, h2 {
 
 .statusKO{
   color: #FE2E2E;
+}
+
+div {
+  width: 90%;
+  margin: auto;
+  border: 2px solid black;
+  margin-bottom: 15px;
 }
 
 </style>

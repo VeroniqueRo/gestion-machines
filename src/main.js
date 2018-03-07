@@ -33,7 +33,7 @@ const router = new VueRouter ({
 // Exemple de component avec props
 Vue.component('invitation', {
   props: ['message'],
-  template:"<h1>{{message}}</h1>"
+  template:"<h3>{{message}}</h3>"
 });
 
 // Components utilisés de manière globale
