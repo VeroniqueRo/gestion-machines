@@ -5,6 +5,16 @@ import MachinesList from './MachinesList.vue'
 import MachinesMap from './MachinesMap.vue'
 import Machine from './Machine.vue'
 
+import * as VueGoogleMaps from 'vue2-google-maps'
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyBxD4Jn5cjYYO7EvX5k7eH_Ro7j3vKZDUU',
+    libraries: 'places', // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+  }
+})
 
 // Import pour page exemple
 import Affichage from './Affichage-test.vue'

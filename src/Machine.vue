@@ -38,8 +38,14 @@ div {
   width: 90%;
   margin: auto;
   border: 2px solid black;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
+
+div.hover {
+  background-color: #eeeeea;
+}
+
 
 </style>
 
