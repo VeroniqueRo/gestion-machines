@@ -2,6 +2,7 @@
 
     <div>
         <h1>{{ message }}</h1>
+        <machine></machine>
     </div>
     
 </template>
@@ -10,11 +11,15 @@
 
 export default {
     name: 'liste',
-    props:['nom'],
+    props:['name','status','checkedAt'],
 
-    data(){
+    data () {
         return {
-            message : 'Liste des machines'
+            message : 'Liste des machines',
+            id: 1,
+            name: 'What else ?',
+            status: false,
+            checkedAt: new Date().toLocaleString(),
         };        
     },
     
