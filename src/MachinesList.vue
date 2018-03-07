@@ -29,7 +29,7 @@ export default {
 
 h1, h2 {
   font-weight: bold;
-  color: #42b983;
+  color: #FE9A2E;
   text-align: center;
 }
 
