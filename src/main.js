@@ -5,10 +5,12 @@ import MachinesList from './MachinesList.vue'
 import MachinesMap from './MachinesMap.vue'
 import Machine from './Machine.vue'
 
+require ('./key.js');
+
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyBxD4Jn5cjYYO7EvX5k7eH_Ro7j3vKZDUU',
+    key: key,
     libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
@@ -22,6 +24,9 @@ import Affichage from './Affichage-test.vue'
 // Import pour l'utilisation du routeur
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
+
+// Import Axios
+// import Axios from 
 
 // Import pour utilisation des ToggleButton
 import ToggleButton from 'vue-js-toggle-button'
