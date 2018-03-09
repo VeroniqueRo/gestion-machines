@@ -6,7 +6,8 @@
             v-bind:key="machine.id"
             v-bind:name="machine.name"
             v-bind:status="machine.status"
-            v-bind:checkedAt="machine.checkedAt">
+            v-bind:checkedAt="machine.checkedAt"
+            >
         </machine>
     </div>
     
@@ -24,16 +25,20 @@ export default {
             machines: [{
                 id: 1,
                 name: 'What else ?',
+                position: {lat: 45.0, lng: 5.0},
                 status: true,
                 checkedAt: new Date().toLocaleString(),
+
             },{
                 id: 2,
                 name: 'Broken',
+                position: {lat: 47.0, lng: 6.0},
                 status: false,
                 checkedAt: new Date().toLocaleString(),
             },{
                 id: 3,
                 name: 'Coffee Machine',
+                position: {lat: 49.0, lng: 4.0},
                 status: true,
                 checkedAt: new Date().toLocaleString(),
             }]

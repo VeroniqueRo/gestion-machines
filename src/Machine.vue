@@ -3,9 +3,11 @@
   <div>
 
     <h1>Machine {{ name }}</h1>
+    <p> Localisation : {{ position }} </p>
     <h2 v-if="status" class="statusOK">Machine OK</h2>
     <h2 v-else class="statusKO">Maintenance à prévoir</h2>
     <h4>Dernière mise à jour le {{ checkedAt }}</h4>
+    <p>{lat:Number(machine.position.lat),long:Number(machine.position.lng)}</p>
     
   </div>
 
@@ -14,7 +16,7 @@
 <script>
 export default {
   name: 'machine',
-  props:['name','status','checkedAt'],
+  props:['name','status','checkedAt', 'position'],
       
 }    
 </script>
