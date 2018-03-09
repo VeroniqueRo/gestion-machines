@@ -26,7 +26,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 // Import Axios
-// import Axios from 
+import Axios from 'axios'
 
 // Import pour utilisation des ToggleButton
 import ToggleButton from 'vue-js-toggle-button'
