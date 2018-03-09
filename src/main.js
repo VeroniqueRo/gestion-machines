@@ -8,9 +8,6 @@ import Machine from './Machine.vue'
 // Import de la clé pour GoogleMap
 import KeyMap from './key.js'
 
-// Import de la librairie Axios
-import Axios from 'axios'
-
 import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {

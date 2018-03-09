@@ -12,10 +12,9 @@
                     v-for="marker in markers"
                     v-bind:key="marker.id"
                     v-bind:name="marker.name"
-                    v-bind:position="{lat: marker.latitude, lng: marker.longitude}"
+                    v-bind:position="{lat:Number(marker.latitude),lng:Number(marker.longitude)}"
                     >
                     <!-- v-bind:key est égal à :key -->
-                    <!-- v-bind:position={lat:Number(marker.latitude),long:Number(marker.longitude)} -->
 
                 </gmap-marker>
             </gmap-map>
@@ -27,7 +26,7 @@
 <script>
 
 // Import de la librairie Axios
-import Axios from 'axios'
+import axios from 'axios'
 
 export default {
     name: 'carte',
@@ -36,31 +35,46 @@ export default {
         return {
             message : 'Carte des machines',        
 
-            markers: [{
-            
-                id:1,
-                name:"machine 1",
-                latitude: 45.0,
-                longitude: 5.0,
-            
-            }, {
+            markers: [], 
+                loading: false,
+                error: null,
 
-                id:2,
-                name:"machine 2",
-                latitude: 47.0,
-                longitude: 6.0,
+            // markers: [{
+            
+            //     id:1,
+            //     name:"machine 1",
+            //     latitude: 45.0,
+            //     longitude: 5.0,
+            
+            // }, {
+
+            //     id:2,
+            //     name:"machine 2",
+            //     latitude: 47.0,
+            //     longitude: 6.0,
                 
-            },{
+            // },{
                 
-                id:3,
-                name:"machine 3",
-                latitude: 49.0,
-                longitude: 4.0,
+            //     id:3,
+            //     name:"machine 3",
+            //     latitude: 49.0,
+            //     longitude: 4.0,
                 
                 
-            }]
+            // }]
         }; 
     },
+
+    created () {
+        axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
+        .then(response => {
+        // JSON responses are automatically parsed.
+        this.markers = response.data
+        })
+        .catch(e => {
+        this.error.push(e)
+        });
+    }
 }
 </script>
 
