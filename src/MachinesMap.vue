@@ -15,7 +15,6 @@
                     v-bind:position="{lat:Number(marker.latitude),lng:Number(marker.longitude)}"
                     >
                     <!-- v-bind:key est égal à :key -->
-
                 </gmap-marker>
             </gmap-map>
         </div>
@@ -36,7 +35,7 @@ export default {
             message : 'Carte des machines',        
 
             markers: [], 
-                loading: false,
+                loading: true,
                 error: null,
 
             // markers: [{
@@ -68,11 +67,11 @@ export default {
     created () {
         axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
         .then(response => {
-        // JSON responses are automatically parsed.
-        this.markers = response.data
+            // JSON responses are automatically parsed.
+            this.markers = response.data
         })
         .catch(e => {
-        this.error.push(e)
+            this.error.push(e)
         });
     }
 }

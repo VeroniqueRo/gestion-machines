@@ -2,6 +2,8 @@
 
     <div>
         <h1>{{ message }}</h1>
+        <div class="alert alert-success" v-show="loading">En cours de téléchargement</div>
+        <div class="alert alert-warning" v-show="error && error.length">Erreur de téléchargement</div>
         <machine v-for="machine in machines"
             v-bind:key="machine.id"
             v-bind:name="machine.name"
@@ -26,8 +28,8 @@ export default {
             message : 'Liste des machines',
             
             machines: [], // au début la liste des machines est vide
-                loading: false,
-                error: null,
+                loading: true,
+                error: [],
             
             // Data utilisées au début :
             //
@@ -56,14 +58,26 @@ export default {
     },
     
     created () {
-        axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
-        .then(response => {
-        // JSON responses are automatically parsed.
-        this.machines = response.data
-        })
-        .catch(e => {
-        this.error.push(e)
-        });
+        
+        console.log("Réponse 1");
+        
+            axios.get(`https://machine-api-campus.herokuapp.com/api/machine`)
+
+            .then(response => {
+                // JSON responses are automatically parsed.
+                
+                console.log("Réponse 2");
+                
+                this.loading = false
+                this.machines = response.data
+            })
+
+            .catch(e => {
+                this.loading = false
+                this.error.push(e)
+            });
+        
+        console.log("Réponse 3");
     }
 }
 
