@@ -15,40 +15,58 @@
 
 <script>
 
+// Import de la librairie Axios
+import axios from 'axios'
+
 export default {
     name: 'liste',
 
     data () {
         return {
             message : 'Liste des machines',
-        
-            machines: [{
-                id: 1,
-                name: 'What else ?',
-                position: {lat: 45.0, lng: 5.0},
-                status: true,
-                checkedAt: new Date().toLocaleString(),
+            
+            machines: [], // au début la liste des machines est vide
+                loading: false,
+                error: null,
+            
+            // Data utilisées au début :
+            //
+            // machines: [{
+            //     id: 1,
+            //     name: 'What else ?',
+            //     position: {lat: 45.0, lng: 5.0},
+            //     status: true,
+            //     checkedAt: new Date().toLocaleString(),
 
-            },{
-                id: 2,
-                name: 'Broken',
-                position: {lat: 47.0, lng: 6.0},
-                status: false,
-                checkedAt: new Date().toLocaleString(),
-            },{
-                id: 3,
-                name: 'Coffee Machine',
-                position: {lat: 49.0, lng: 4.0},
-                status: true,
-                checkedAt: new Date().toLocaleString(),
-            }]
+            // },{
+            //     id: 2,
+            //     name: 'Broken',
+            //     position: {lat: 47.0, lng: 6.0},
+            //     status: false,
+            //     checkedAt: new Date().toLocaleString(),
+            // },{
+            //     id: 3,
+            //     name: 'Coffee Machine',
+            //     position: {lat: 49.0, lng: 4.0},
+            //     status: true,
+            //     checkedAt: new Date().toLocaleString(),
+            // }]
+
          }  
     },
     
-    methods:{
-
+    created () {
+        axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
+        .then(response => {
+        // JSON responses are automatically parsed.
+        this.machines = response.data
+        })
+        .catch(e => {
+        this.error.push(e)
+        });
     }
 }
+
 </script>
 
 <!-- style css propre au component-->
