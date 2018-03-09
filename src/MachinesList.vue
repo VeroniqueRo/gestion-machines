@@ -61,7 +61,7 @@ export default {
         
         console.log("Réponse 1");
         
-            axios.get(`https://machine-api-campus.herokuapp.com/api/machine`)
+            axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
 
             .then(response => {
                 // JSON responses are automatically parsed.
