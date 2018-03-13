@@ -31,14 +31,25 @@ import ToggleButton from 'vue-js-toggle-button'
 Vue.use(ToggleButton);
 
 // Déclaration des routes
-const routes = [
-  { path:'/machines', component: MachinesList},
-  { path:'/map', component: MachinesMap},
-  { path:'/machine', component: Machine},
+const routes = [{
+    path: '/machines', // Chemin affiché dans le navigateur
+    name: 'ListeMachines', // Nom à utiliser comme les noms dans les routes de Laravel
+    component: MachinesList // Composant utilisé pour la route
+  },
+  {
+    path: '/map',
+    name: 'CarteMachine',
+    component: MachinesMap
+  },
+  {
+    path: '/machine',
+    name: 'DetailMachine',
+    component: Machine
+  },
 ]
 
 // Création de l'instance du routeur et passez l'option `routes`.
-const router = new VueRouter ({
+const router = new VueRouter({
   routes
 });
 
@@ -46,7 +57,7 @@ const router = new VueRouter ({
 // Exemple de component avec props
 Vue.component('invitation', {
   props: ['message'],
-  template:"<h3>{{message}}</h3>"
+  template: "<h3>{{message}}</h3>"
 });
 
 // Components utilisés de manière globale
@@ -59,6 +70,7 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
-});c
-
+  components: {
+    App
+  }
+});

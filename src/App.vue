@@ -5,8 +5,6 @@
 
     <invitation message='Que voulez-vous faire ?'></invitation>
 
-
-
     <!--  Première utilisation avec des boutons sans route :
 
     <button class="btn btn-success" v-on:click="onMachinesListClick">Consulter la liste des machines</button>
@@ -19,77 +17,77 @@
 
     <!-- utilisation du composant router-link pour la navigation. -->
     <!-- spécifie le lien en le passant à la prop `to` -->
-    <router-link to="/machines"><button class="btn btn-info">Consulter la liste des machines</button></router-link>
-    <router-link to="/map"><button class="btn btn-info">Voir la carte</button></router-link>
-    
+    <router-link to="/machines">
+      <button class="btn btn-info">Consulter la liste des machines</button>
+    </router-link>
+    <router-link to="/map">
+      <button class="btn btn-info">Voir la carte</button>
+    </router-link>
+
     <!-- V1 : Routes avec alert sur le clic -->
     <!-- <router-link to="/machines"><button class="btn btn-info" v-on:clic="onMachinesListClick">Consulter la liste des machines</button></router-link>
     <router-link to="/map"><button class="btn btn-info" v-on:click="onMapClick">Voir la carte</button></router-link> -->
-    
+
     <!-- Route permettant d'afficher le component machine seul : -->
     <!-- <router-link to="/machine"><button class="btn btn-info">Voir la machine</button></router-link> -->
-    
+
     <router-view></router-view>
-    
     
   </div>
 </template>
 
 <script>
+  export default {
+    name: 'app',
+    data: function () {
+      return {
+        msg: 'Que voulez-vous faire ?',
+      }
+    },
 
-export default {
-  name: 'app',
-  data : function () {
-    return {
-      msg: 'Que voulez-vous faire ?',
+    methods: {
+      onMachinesListClick: function () {
+        window.alert("Vous avez appuyé sur la liste des machines")
+      },
+      onMapClick: function () {
+        window.alert("Vous avez appuyé sur la carte")
+      },
     }
-  },
-
-  methods:{
-    onMachinesListClick : function() {
-      window.alert("Vous avez appuyé sur la liste des machines")
-    },
-    onMapClick : function () {
-      window.alert("Vous avez appuyé sur la carte")
-    },
   }
-}
-
-
 
 </script>
 
 <!-- style css propre au component-->
 <style scoped>
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-img {
-  width: 20%;
-}
+  img {
+    width: 20%;
+  }
 
 
-h1, h2 {
-  font-weight: normal;
-}
+  h1,
+  h2 {
+    font-weight: normal;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
-.router-link-active {
-  color: #42b983;
-}
+  .router-link-active {
+    color: #42b983;
+  }
 
 </style>
